@@ -16,15 +16,19 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from core.views import cliente_view_set
+from core.views import ClienteViewSet, article_list
 
 
 from rest_framework import routers
 router = routers.DefaultRouter()
-router.register(r'clientes',cliente_view_set)
+# Jeito Automático de fazer as routs
+router.register(r'clientes',ClienteViewSet)
 
 urlpatterns = [
+    # add routs de modo automático
     path('',include(router.urls)),
+    # Jeito quando você cria na mão sua view_func
+    path('article/',article_list),
     path('admin/', admin.site.urls),
     path('api-auth/',include('rest_framework.urls')),
 ]
