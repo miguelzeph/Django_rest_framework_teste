@@ -16,12 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from core.views import ClienteViewSet
+from core.views import cliente_view_set
 
 
 from rest_framework import routers
 router = routers.DefaultRouter()
-router.register(r'clientes',ClienteViewSet)
+router.register(r'clientes',cliente_view_set)
 
 urlpatterns = [
     path('',include(router.urls)),

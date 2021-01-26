@@ -4,6 +4,6 @@ from .models import Cliente
 from .serializers import ClienteSerializer
 
 # ViewSets define the view behavior.
-class ClienteViewSet(viewsets.ModelViewSet):
+class cliente_view_set(viewsets.ModelViewSet):
     queryset = Cliente.objects.all()
     serializer_class = ClienteSerializer
