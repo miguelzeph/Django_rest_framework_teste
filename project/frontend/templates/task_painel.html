@@ -1,0 +1,53 @@
+<div class="container">
+    <div id="task-container">
+        <h3 align="center">Task</h3>
+        <div id="form-wrapper">
+            <form id="form">
+                <div class="flex-wrapper">
+                    <div style="flex: 6">
+                        <input id="title" class="form-control" type="text" name="title" placeholder="Add task">
+                    </div>
+                    <div style="flex: 1">
+                        <input id="submit" class="btn" type="submit">
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div id="list-wrapper">
+
+        </div>
+
+        
+        {%if task%}
+        {%for dados in task %}
+        <div id="data-row-${i}" class="task-wrapper flex-wrapper">
+            {%if dados.completed%}
+            <div style="flex:7">
+                <strike class="title">{{dados.title}}</strike>
+            </div>
+            {%else%}
+            <div style="flex:7">
+                <span class="title">{{dados.title}}</span>
+            </div>
+            {%endif%}
+            <div style="flex:1">
+                <button class="btn btn-sm btn-outline-success edit">Edit </button>
+            </div>
+            <div style="flex:1">
+                <button class="btn btn-sm btn-outline-danger delete">x</button>
+            </div>
+        </div>
+        {%endfor%}
+
+        {%else%}
+        <div id="data-row-${i}" class="task-wrapper flex-wrapper">
+            <span class="title">Don't have task yet...</span>
+        </div>
+
+        {%endif%}
+
+
+
+    </div>
+</div>

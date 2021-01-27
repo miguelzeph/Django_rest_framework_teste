@@ -1,5 +1,28 @@
 from django.shortcuts import render
 
-# Create your views here.
+# Meus arquivos
+from api.models import Task, Client
+
+
+#########################################################
+############ CRUD - Creat/READ/UPDATE/DELETE ############
+#########################################################
+# GET (read)
 def home_page(request):
-    return render(request,'home.html')
+    task = Task.objects.all()
+    client = Client.objects.all()
+
+    data = {
+        'task': task,
+        'client':client
+    }
+    return render(request,'home.html', data)
+
+# POST (create)
+
+# PUT (update)
+
+# DELETE
+
+#########################################################
+#########################################################
