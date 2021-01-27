@@ -16,7 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-from core.views import ClienteViewSet, article_list
+from core.views import (
+    ClienteViewSet,
+    article_list,
+    article_detail
+    )
 
 
 from rest_framework import routers
@@ -29,6 +33,8 @@ urlpatterns = [
     path('',include(router.urls)),
     # Jeito quando você cria na mão sua view_func
     path('article/',article_list),
+    path('article/<int:pk>/',article_detail),
+    #
     path('admin/', admin.site.urls),
     path('api-auth/',include('rest_framework.urls')),
 ]
