@@ -17,9 +17,16 @@ def home_page(request):
         'client':client
     }
     return render(request,'home.html', data)
-
+"""
 # POST (create)
+def create_form(request):
 
+    #Cria OBjeto no DB
+    form = Task(request.POST)
+    if form.is_valid():
+        form.save()
+    return render(request,'home.html')
+"""
 # PUT (update)
 
 # DELETE

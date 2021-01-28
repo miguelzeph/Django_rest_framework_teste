@@ -1,15 +1,21 @@
+
 <div class="container">
     <div id="task-container">
         <h3 align="center">Task</h3>
         <div id="form-wrapper">
-            <form id="form">
+            <form id="form" methods = "POST" action="#">
                 <div class="flex-wrapper">
                     <div style="flex: 6">
                         <input id="title" class="form-control" type="text" name="title" placeholder="Add task">
                     </div>
+
                     <div style="flex: 1">
                         <input id="submit" class="btn" type="submit">
                     </div>
+                </div>
+                <div class="form-check" style="float:right">
+                    <input type="checkbox" class="form-check-input" name = 'completed' id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Completed</label>
                 </div>
             </form>
         </div>
@@ -47,7 +53,7 @@
 
         {%endif%}
 
-
-
     </div>
+
 </div>
+
